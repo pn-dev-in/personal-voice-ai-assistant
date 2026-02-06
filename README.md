@@ -88,52 +88,48 @@ Triggered only when requested.
 ---
 
 
-## Architecture Overview
+## 🏗️ Architecture Overview
 
-Speech Input
-↓
-Speech-to-Text (Whisper)
-↓
-Mode Detection
-├─ Daily Briefing
-└─ Normal Interaction
-↓
-Memory Intent
-↓
-Safety Gate
-↓
-Tool Executor or LLM
-↓
-Text-to-Speech
----
+The assistant follows a **deterministic, layered processing pipeline**:
 
-**Design principles:**
-- Single entry point
+Voice Input
+→ Speech-to-Text (Whisper)
+→ Mode & Intent Detection
+→ Safety Gate
+→ LLM Reasoning or Tool Execution
+→ Text-to-Speech Response
+
+Each layer has a single responsibility, making the system predictable, safe, and easy to extend.
+
+
+### Design Principles
+
+- Single, explicit entry point
 - Clear separation of concerns
 - Deterministic control flow
-- Minimal hidden state
----
+- No hidden or implicit state
+- User control over memory and actions
 
 
-## Project Structure
+## 📁 Project Structure
 
 
 voice_ai_agent/
 ├── src/
-│ ├── main.py # Entry point
-│ ├── audio/ # Speech-to-text
-│ ├── brain/ # LLM logic
-│ ├── safety/ # Intent & safety
-│ ├── tools/ # Sandboxed actions
-│ ├── memory/ # Explicit memory
-│ ├── modes/ # Interaction modes
+│ ├── main.py # Single entry point
+│ ├── audio/ # Speech-to-text (Whisper)
+│ ├── brain/ # LLM reasoning logic
+│ ├── safety/ # Intent classification & guardrails
+│ ├── tools/ # Sandboxed task execution
+│ ├── memory/ # Explicit, user-controlled memory
+│ ├── modes/ # Interaction modes (normal, briefing)
 │ └── voice/ # Text-to-speech
 │
-├── user_data/ # Local-only data
-├── config.yaml
+├── user_data/ # Local-only personal data (gitignored)
+├── config.yaml # Runtime configuration
 ├── requirements.txt
 └── README.md
----
+
 
 
 ## Privacy & Ethics
