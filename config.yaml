@@ -1,0 +1,9 @@
+audio:
+  duration: 5
+
+assistant:
+  voice_rate: 170
+  max_response_length: 300
+
+safety:
+  allow_tasks: true

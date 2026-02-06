@@ -1,0 +1,17 @@
+import os
+from dotenv import load_dotenv
+from groq import Groq
+
+load_dotenv()
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+def ask_llm(user_text: str) -> str:
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[
+            {"role": "system", "content": "You are a helpful, concise AI assistant."},
+            {"role": "user", "content": user_text}
+        ]
+    )
+    return response.choices[0].message.content
