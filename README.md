@@ -90,48 +90,46 @@ Triggered only when requested.
 ## Architecture Overview
 
 Speech Input
-   ↓
+↓
 Speech-to-Text (Whisper)
-   ↓
+↓
 Mode Detection
-   ├─ Daily Briefing
-   └─ Normal Interaction
-        ↓
-        Memory Intent
-        ↓
-        Safety Gate
-        ↓
-        Tool Executor or LLM
-   ↓
+├─ Daily Briefing
+└─ Normal Interaction
+↓
+Memory Intent
+↓
+Safety Gate
+↓
+Tool Executor or LLM
+↓
 Text-to-Speech
 
 
-Design Principles:
-• Single entry point
-• Clear separation of concerns
-• Deterministic control flow
-• Minimal hidden state
-
+**Design principles:**
+- Single entry point
+- Clear separation of concerns
+- Deterministic control flow
+- Minimal hidden state
 ---
 
 ## Project Structure
 
 voice_ai_agent/
 ├── src/
-│   ├── main.py        # Single entry point
-│   ├── audio/         # Speech-to-text
-│   ├── brain/         # LLM interaction
-│   ├── safety/        # Intent & safety logic
-│   ├── tools/         # Sandboxed actions
-│   ├── memory/        # Explicit memory
-│   ├── modes/         # Interaction modes
-│   └── voice/         # Text-to-speech
+│ ├── main.py # Single entry point
+│ ├── audio/ # Speech-to-text
+│ ├── brain/ # LLM interaction
+│ ├── safety/ # Intent & safety logic
+│ ├── tools/ # Sandboxed actions
+│ ├── memory/ # Explicit memory
+│ ├── modes/ # Interaction modes
+│ └── voice/ # Text-to-speech
 │
-├── user_data/         # Local-only user data
-├── config.yaml        # Runtime configuration
+├── user_data/ # Local-only user data
+├── config.yaml # Runtime configuration
 ├── requirements.txt
 └── README.md
-
 
 ---
 
