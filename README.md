@@ -131,7 +131,6 @@ voice_ai_agent/
 └── README.md
 
 
-
 ## Privacy & Ethics
 
 This assistant:
