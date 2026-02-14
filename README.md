@@ -1,48 +1,53 @@
-# Voice-First AI Assistant (Local, Privacy-Preserving)
+## AI Voice Assistant System
+Local-First Voice AI with Memory, Safety Filtering & Task Execution
 
-An applied AI system demonstrating **speech recognition, LLM-based reasoning, safety guardrails, and modular AI architecture**.
+## What is this?
+A local-first AI voice assistant that supports memory, task execution,
+safety filtering, and daily planning using speech input and LLM reasoning.
 
+The system uses Whisper for speech recognition, Groq-hosted LLMs for reasoning,
+and a structured orchestration pipeline for controlled execution.
 
-## 🔍 What This Project Demonstrates
-- End-to-end AI system design
-- Voice-based human–AI interaction
-- LLM integration (Groq)
-- Safety-aware intent classification
-- Local-first, privacy-preserving architecture
-- Modular, extensible Python codebase
+## Features
 
-
-## 📌 Overview
-A local, privacy-first, voice-driven AI assistant designed for daily personal use.
-
-Unlike cloud-based assistants, this system runs locally, activates only on explicit user input, and enforces strict safety and memory controls.
-
----
-
-## ✨ Key Features
-- LLM-based reasoning using Groq
-- Push-to-talk voice interaction (no always-on listening)
-- Explicit, user-controlled long-term memory
-- Intent classification with safety guardrails
-- Sandboxed task execution
-- Modular and extensible architecture
-
----
+- Push-to-talk voice interaction (Ctrl + Alt + Space)
+- Speech-to-text using Whisper
+- LLM reasoning via Groq (Llama 3.1)
+- Long-term memory (remember & recall facts)
+- Task execution (note saving & reading)
+- Safety intent filtering
+- Daily briefing planning mode
+- Local-first architecture
 
 
 ## 🏗️ System Architecture
-Voice Input  
+
+Mic Input  
 → Speech-to-Text (Whisper)  
-→ Mode & Intent Detection  
-→ Safety Gate  
-→ LLM Reasoning (Groq) or Tool Execution  
-→ Text-to-Speech Response
+→ Mode Detection  
+→ Memory / Task / Query Routing  
+→ Safety Filtering  
+→ LLM Reasoning  
+→ Text-to-Speech Output
 
 ---
 
 This layered design ensures **clear separation of concerns**, predictable behavior, and strong safety boundaries.
 
 ---
+
+## Project Status
+
+Current:
+- Core voice pipeline implemented
+- Memory + task tools operational
+- Safety layer integrated
+- Daily briefing mode implemented
+
+Planned:
+- UI layer
+- Cloud deployment (Azure App Service)
+- Modular tool expansion
 
 ## 🔐 Privacy & Safety Principles
 
